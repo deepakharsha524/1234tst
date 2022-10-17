@@ -1,3 +1,67 @@
+##Installation of Jenkins on EC2 Instance
+i. Run the command to update all the packages.
+
+sudo yum update
+
+ii. Check if java is installed or not using the command
+
+java -version
+
+If java is not installed, install using the following command
+ yum install java
+ yum revmove java
+
+amazon-linux-extras install epel 
+amazon-linux-extras install java-openjdk11  
+
+
+iii. Now, to download the latest Jenkins package
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+
+**iv. **To enable the installation of the package, import the key file from Jenkins-CI:
+
+	sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+v. Install Jenkins on the EC2 instance
+
+sudo yum install jenkins
+
+vi. To start the Jenkins service
+
+sudo service jenkins start
+
+vii. Access the Jenkins server using the public DNS of the EC2 instance or public IP of the instance on port 8080.
+
+http://{ec2-public-dns}:8080
+
+
+viii. Login using the username admin and to get the initial admin password execute the following command:
+sudo su -
+cd /var/lib/jenkins/secrets/ 
+cat initialAdminPassword
+
+ix. To stop Jenkins service
+
+sudo service jenkins stop
+
+
+##Update jenkins port
+
+ sudo vi /usr/lib/systemd/system/jenkins.service
+ 
+ Environment="JENKINS_PORT=8090"
+ 
+
+
+
+
+
+
+
+
+
 # Spring Boot Actuator: Health Check, Auditing, Metrics Gathering and Monitoring 
 
 ## Tutorials 
