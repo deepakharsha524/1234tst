@@ -8,7 +8,6 @@ pipeline {
 }*/
   tools {
         maven 'maven354' 
-		git 'git'
     }
 
 stages{
@@ -20,12 +19,12 @@ stages{
         
     stage("git pull"){
         steps {
-            sh 'git clone https://github.com/jenkins-docs/simple-java-maven-app.git'
+            sh 'git clone https://github.com/deepakharsha524/sprint_actuator'
         }
     }
      stage("maven test"){
          steps {
-            dir("simple-java-maven-app"){
+            dir("sprint_actuator"){
                  sh 'mvn test'
             }
          }
@@ -33,7 +32,7 @@ stages{
     }
          stage("maven install "){
          steps {
-            dir("simple-java-maven-app"){
+            dir("sprint_actuator"){
                  sh 'mvn clean install'
             }
          }
