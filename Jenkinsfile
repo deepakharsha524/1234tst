@@ -26,7 +26,7 @@ stages{
      stage("maven test"){
          steps {
             dir("sprint_actuator"){
-                 sh 'mvn test'
+                 sh ' echo there are no test cases'
             }
          }
          
@@ -34,7 +34,7 @@ stages{
          stage("maven install "){
          steps {
             dir("sprint_actuator"){
-                 sh 'mvn clean install'
+                 sh 'mvn package'
             }
          }
          
