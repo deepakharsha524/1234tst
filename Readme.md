@@ -1,4 +1,4 @@
-##Installation of Jenkins on EC2 Instance
+## Installation of Jenkins on EC2 Instance
 i. Run the command to update all the packages.
 
 sudo yum update
@@ -47,7 +47,7 @@ ix. To stop Jenkins service
 sudo service jenkins stop
 
 
-##Update jenkins port
+## Update jenkins port
 
  sudo vi /usr/lib/systemd/system/jenkins.service
  
