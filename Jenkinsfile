@@ -59,8 +59,8 @@ stages{
                 ls -lrth target/
                 docker login -u AWS https://160988286701.dkr.ecr.us-east-1.amazonaws.com -p $(aws ecr get-login-password --region us-east-1)
                 docker build -t customapache .
-                docker tag customapache:latest 160988286701.dkr.ecr.us-east-1.amazonaws.com/customapache:latest
-                docker push 160988286701.dkr.ecr.us-east-1.amazonaws.com/customapache:latest
+                docker tag customapache:latest 160988286701.dkr.ecr.us-east-1.amazonaws.com/customapache:$BUILD_NUMBER
+                docker push 160988286701.dkr.ecr.us-east-1.amazonaws.com/customapache:$BUILD_NUMBER
                 '''
                 }
                 
