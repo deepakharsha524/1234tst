@@ -1,5 +1,8 @@
 ## Installation of Jenkins on EC2 Instance
-i. Run the command to update all the packages.
+
+
+
+Run the command to update all the packages.
 
 sudo yum update
 
