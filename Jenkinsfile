@@ -11,7 +11,6 @@ pipeline {
 }*/
   tools {
         maven 'maven354' 
-        git 'git'
 
 
     }
